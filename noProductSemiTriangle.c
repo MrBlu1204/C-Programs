@@ -11,7 +11,6 @@ int main()
 			for (j=k+1; j<k+i; j++) 
 				printf("%d*", j); 
 			printf("%d\n", j++); 
-			
 			k = j;	 
 		} else { 
 			k = k+i-1; 
