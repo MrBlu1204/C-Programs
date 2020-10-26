@@ -11,22 +11,18 @@ int main(){
             scanf("%d",&matrix[i][j]);
         }
     }
+    printf("Matrix after 90 degrees roration \n");
     for(int i=0;i<n;i++){
-        int min_row=matrix[i][0],col_ind=0;
-        for(int j=1;j<n;j++){
-            if(min_row>matrix[i][j]){
-                min_row=matrix[i][j];
-                col_ind=j;
-            }
+       for(int j=m-1;j>=0;j--){
+           printf("%d  ",matrix[j][i]);
         }
-        int k;
-        for(k=0;k<n;k++){
-            if(min_row<matrix[k][col_ind])
-             break;
-        }
-        if(k==n){
-            printf("Saddle Point is %d",min_row);
-        }
+        printf("\n");
     }
+   /* for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            scanf("%d ",matrix[i][j]);
+        }
+        printf("\n");
+    }*/
     return 0;
 }
