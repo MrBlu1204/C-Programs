@@ -18,11 +18,5 @@ int main(){
         }
         printf("\n");
     }
-   /* for(int i=0;i<m;i++){
-        for(int j=0;j<n;j++){
-            scanf("%d ",matrix[i][j]);
-        }
-        printf("\n");
-    }*/
     return 0;
 }
