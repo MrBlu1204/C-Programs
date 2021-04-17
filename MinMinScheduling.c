@@ -11,13 +11,17 @@ int main()
   register int i;
   register int j;
   int CT[machine][task];
+  int completionTime[machine][task];
 
-  printf("\nEnter tasks machine wise:\n");
+      printf("\nEnter tasks machine wise:\n");
   for (i = 0; i < machine; ++i)
   {
+    printf("Machine %d\n",i);
     for (j = 0; j < task; ++j)
     {
+      printf("Task %d : ",j);
       scanf("%d", &CT[i][j]);
+      completionTime[i][j]=CT[i][j];
     }
   }
 
@@ -29,7 +33,7 @@ int main()
   printf("\n");
   for (i = 0; i < machine; ++i)
   {
-    printf("M%d\t", i);
+    printf("VM%d\t", i);
     for (j = 0; j < task; ++j)
     {
       printf("%d\t", CT[i][j]);
@@ -84,4 +88,21 @@ int main()
   for (int i = 0; i < task; i++) {
     printf("Task %d -> Machine %d\n", assignment[i][0], assignment[i][1]);
   }
+
+  int overAllCompletion=0;
+  for(int i = 0;i < machine; i++){
+    int t=0;
+    for(int j =0; j < task ;j++){
+      int taskID = assignment[j][0];
+      if(assignment[j][1]==i){
+        printf("%d\n", taskID);
+        t = t + completionTime[i][taskID];
+      }
+    }
+    if(t>overAllCompletion){
+      overAllCompletion = t;
+    }
+  }
+
+  printf("Overall Completion Time : %d\n",overAllCompletion);
 }
